@@ -1,27 +1,25 @@
-let CXCXCX;
-
 class dTable {
-	constructor(name) {
-		this.name = name;
-	}
+	constructor() {
+		this.CXCXCX = [[],[],[],[]];
+    	}
 
 	shows() {
-		let table = CXCXCX;
+		let table = this.CXCXCX;
 		return table;
 	}
 
 	set() {
 		try {
-			CXCXCX = [[], [], [], []];
+			this.CXCXCX = [[], [], [], []];
 			console.log("complate!")
 		} catch(e) {
 			return e;
 		}
 	}
 
-	show() {
+	show(num) {
 		if(!isNaN(num)) {
-			return [CXCXCX[1][num], CXCXCX[2][num], CXCXCX[3][num]];
+			return [this.CXCXCX[1][num], this.CXCXCX[2][num], this.CXCXCX[3][num]];
 		} else {
 			throw "parameter is NOT number";
 		}
@@ -29,9 +27,10 @@ class dTable {
 
 	create(one) {
 		try{
-			let ip = (CXCXCX[0].length)
-			CXCXCX[0][ip] = ip;
-			CXCXCX[1][ip] = one;
+			let ip = (this.CXCXCX[0].length)
+			this.CXCXCX[0][ip] = ip;
+			this.CXCXCX[1][ip] = one;
+			return eturn [this.CXCXCX[1][ip], this.CXCXCX[2][ip], this.CXCXCX[3][ip]];
 		} catch(e) {
 			return e;
 		}
@@ -39,13 +38,26 @@ class dTable {
 
 	create(one, two, three) {
 		try{
-			let ip = (CXCXCX[0].length)
-			CXCXCX[0][ip] = ip;
-			if(one != null) CXCXCX[1][ip] = one;
-			if(two != null) CXCXCX[2][ip] = two;
-			if(three != null) CXCXCX[3][ip] = three;
+			let ip = (this.CXCXCX[0].length)
+			this.CXCXCX[0][ip] = ip;
+			if(one != null) this.CXCXCX[1][ip] = one;
+			if(two != null) this.CXCXCX[2][ip] = two;
+			if(three != null) this.CXCXCX[3][ip] = three;
 		} catch(e) {
 			return e;
 		}
+	}
+
+	search(one, val) {
+		let let = [];
+		let child = [];
+		for (let i=0; i<this.CXCXCX[0].length; i++) {
+			if(val == this.CXCXCX[one][i]) {
+				child = [this.CXCXCX[0][i], this.CXCXCX[1][i], this.CXCXCX[2][i], this.CXCXCX[3][i]];
+				list.push(child);
+				child = [];
+			}
+		}
+		return list;
 	}
 }
